@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dark-bg">
+    <div className="min-h-screen bg-light-bg">
       <Header />
       <main className="pt-20">
         <Hero />

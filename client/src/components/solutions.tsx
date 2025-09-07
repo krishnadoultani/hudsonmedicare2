@@ -29,7 +29,7 @@ const solutions = [
 
 export default function Solutions() {
   return (
-    <section id="solutions" className="py-20 lg:py-32 bg-gradient-to-br from-dark-bg to-accent/10">
+    <section id="solutions" className="py-20 lg:py-32 bg-gradient-to-br from-light-bg to-accent/10">
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 

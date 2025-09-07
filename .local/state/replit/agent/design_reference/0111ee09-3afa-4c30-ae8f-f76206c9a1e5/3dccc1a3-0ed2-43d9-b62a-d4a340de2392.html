@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hudson Healthcare Solutions | Smart Software for Modern Healthcare</title>
+    <meta name="description" content="Electronic Health Record systems, Practice Management Software, Telehealth Platforms, Patient Portals, Billing Management, and AI-Driven Analytics for Healthcare">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Hudson Healthcare Solutions | Smart Software for Modern Healthcare">
+    <meta property="og:description" content="Electronic Health Record systems, Practice Management Software, Telehealth Platforms, Patient Portals, Billing Management, and AI-Driven Analytics for Healthcare">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hudson Healthcare Solutions">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Hudson Healthcare Solutions",
+        "url": "https://ithudson.com",
+        "telephone": "+1-551-800-3255",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "221 River Street, Suite 9",
+            "addressLocality": "Hoboken",
+            "addressRegion": "NJ",
+            "postalCode": "07030",
+            "addressCountry": "US"
+        }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --orange: #FF6B35;
+            --black: #000000;
+            --white: #FFFFFF;
+            --gray-light: #f5f5f5;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background: var(--white);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 0.75rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .header.scrolled .nav-link {
+            color: var(--white);
+        }
+
+        .header.scrolled .nav-link:hover {
+            color: var(--orange);
+        }
+
+        .header.scrolled .logo {
+            color: var(--white);
+        }
+
+        .header.scrolled .call-btn {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--black);
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover {
+            color: var(--orange);
+        }
+
+        .call-btn {
+            background: var(--black);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid var(--black);
+        }
+
+        .call-btn:hover {
+            background: var(--orange);
+            border-color: var(--orange);
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--black) 0%, var(--orange) 100%);
+            color: var(--white);
+            padding: 8rem 1rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://pixabay.com/get/g9854732d3b9fef7fbc592484fe8f00000bf4104d83cb427ae3d0b787bfce2746f8b7627d5388146036a6ab8ce85e22fabc27acbfb9c364bb653011b51b0c0aa6_1280.jpg') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--orange);
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--orange);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--white);
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 1rem;
+        }
+
+        .section-alt {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-alt .section-title {
+            color: var(--white);
+        }
+
+        /* About */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .address {
+            background: var(--orange);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        /* Solutions Grid */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .solution-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .section-alt .solution-card {
+            background: var(--gray-light);
+            color: var(--black);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--orange);
+            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .solution-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--orange);
+        }
+
+        .solution-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Why Hudson */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .why-card {
+            background: var(--orange);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .why-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .why-card ul {
+            list-style: none;
+        }
+
+        .why-card li {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .why-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        /* Contact */
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            background: var(--black);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: var(--orange);
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--orange);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border: 3px solid var(--orange);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        .form-helper {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--orange);
+            color: var(--white);
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--black);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem 1rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-info {
+            margin-bottom: 2rem;
+        }
+
+        .footer-info p {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-chips {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .chip {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Success/Error Messages */
+        .message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .solution-card {
+                padding: 1.5rem;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-card {
+                padding: 1rem;
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="#home" class="logo">Hudson Healthcare Solutions</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#solutions" class="nav-link">Solutions</a></li>
+                <li><a href="#why" class="nav-link">Why Hudson</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="tel:+15518003255" class="call-btn">Call: 551-800-3255</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Smart Software for Modern Healthcare.</h1>
+            <p>Leading healthcare technology solutions focused on improving care delivery and efficiency across the United States.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn-primary">Talk to us</a>
+                <a href="#solutions" class="btn-secondary">See our solutions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Hudson Healthcare Solutions</h2>
+            <div class="about-content">
+                <p>We are dedicated to improving care delivery and efficiency through cutting-edge technology solutions. Our mission is to empower healthcare providers with innovative software that enhances patient outcomes and streamlines operations.</p>
+                <p>With a focus on U.S. healthcare standards and regulations, we deliver scalable solutions that grow with your practice while maintaining the highest levels of security and compliance.</p>
+                <div class="address">221 River Street, Suite 9, Hoboken, NJ 07030</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Our Healthcare Solutions</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h3>Electronic Health Record (EHR) Systems</h3>
+                    <p>Comprehensive digital patient records that improve care coordination and clinical decision-making across your entire healthcare organization.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Practice Management Software</h3>
+                    <p>Streamline scheduling, billing, and administrative workflows to maximize efficiency and reduce operational overhead.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Telehealth Platforms</h3>
+                    <p>Secure, HIPAA-compliant virtual care solutions that expand access and improve patient engagement.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Patient Portals & Engagement Tools</h3>
+                    <p>Empower patients with secure access to their health information and direct communication with providers.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Billing & Revenue Cycle Management</h3>
+                    <p>Optimize financial performance with automated billing, claims processing, and revenue optimization tools.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>AI-Driven Analytics for Healthcare</h3>
+                    <p>Leverage advanced analytics and machine learning to gain insights that improve patient outcomes and operational efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Hudson Section -->
+    <section id="why" class="section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Hudson Healthcare Solutions</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>Healthcare-Focused Expertise</h3>
+                    <ul>
+                        <li>Deep understanding of healthcare workflows</li>
+                        <li>Experienced team of healthcare IT professionals</li>
+                        <li>Proven track record with medical practices</li>
+                        <li>Continuous innovation in healthcare technology</li>
+                    </ul>
+                </div>
+                <div class="why-card">
+                    <h3>Compliance & Scalability</h3>
+                    <ul>
+                        <li>Full HIPAA compliance and U.S. regulations</li>
+                        <li>Scalable solutions for clinics of all sizes</li>
+                        <li>Hospital-grade security and reliability</li>
+                        <li>Specialty practice optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+15518003255">551-800-3255</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Address:</strong><br>
+                        <a href="https://maps.google.com/?q=221+River+Street,+Suite+9,+Hoboken,+NJ+07030" target="_blank">
+                            221 River Street, Suite 9<br>
+                            Hoboken, NJ 07030
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <div id="form-messages"></div>
+                    <form id="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <p class="form-helper">Please do not include personal medical information or PHI in this form.</p>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; <span id="current-year"></span> Hudson Healthcare Solutions</p>
+                <p>551-800-3255 | Hoboken, NJ</p>
+            </div>
+            <div class="footer-chips">
+                <span class="chip">Case Studies (coming soon)</span>
+                <span class="chip">Blog / Insights (coming soon)</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Set current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Header scroll effect
+            const header = document.getElementById('header');
+            let lastScrollY = window.scrollY;
+
+            function handleScroll() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScrollY = window.scrollY;
+            }
+
+            window.addEventListener('scroll', handleScroll);
+
+            // Form submission
+            const form = document.getElementById('contact-form');
+            const messagesContainer = document.getElementById('form-messages');
+
+            function showMessage(message, type) {
+                messagesContainer.innerHTML = `<div class="message ${type}" style="display: block;">${message}</div>`;
+                messagesContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const formAction = form.getAttribute('action');
+                
+                // Check if placeholder form action is still present
+                if (formAction.includes('your_form_id')) {
+                    alert('Please replace "your_form_id" in the form action with your actual Formspree form ID.');
+                    return;
+                }
+
+                const submitBtn = form.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                
+                // Disable button and show loading state
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                try {
+                    const formData = new FormData(form);
+                    const response = await fetch(formAction, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        showMessage('Thank you! Your message has been sent successfully. We\'ll get back to you soon.', 'success');
+                        form.reset();
+                    } else {
+                        throw new Error('Network response was not ok');
+                    }
+                } catch (error) {
+                    showMessage('Sorry, there was an error sending your message. Please try again or call us directly at 551-800-3255.', 'error');
+                } finally {
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            });
+
+            // Smooth scroll for navigation links (optional enhancement)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const headerHeight = document.querySelector('.header').offsetHeight;
+                            const targetPosition = target.offsetTop - headerHeight - 20;
+                            
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

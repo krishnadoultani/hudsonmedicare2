@@ -8,7 +8,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-gradient-to-br from-dark-bg to-black border-t border-border-color">
+    <footer className="bg-gradient-to-br from-light-bg to-gray-100 border-t border-border-color">
       <div className="container px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8">
           <div className="text-center lg:text-left">

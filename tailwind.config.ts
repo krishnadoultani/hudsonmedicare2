@@ -63,6 +63,7 @@ export default {
         },
         // Hudson Healthcare custom colors
         "primary-orange": "var(--primary-orange)",
+        "light-bg": "var(--light-bg)",
         "dark-bg": "var(--dark-bg)",
         "card-bg": "var(--card-bg)",
         "text-primary": "var(--text-primary)",

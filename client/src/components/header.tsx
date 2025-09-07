@@ -30,7 +30,7 @@ export default function Header() {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
         isScrolled 
-          ? 'bg-dark-bg/95 backdrop-blur-glass' 
+          ? 'bg-light-bg/95 backdrop-blur-glass' 
           : 'gradient-header'
       } border-b border-primary-orange/20`}
       data-testid="header"

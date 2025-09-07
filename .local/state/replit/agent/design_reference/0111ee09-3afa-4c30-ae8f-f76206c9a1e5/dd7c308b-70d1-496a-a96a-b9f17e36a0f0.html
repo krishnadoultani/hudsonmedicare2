@@ -1,0 +1,686 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hudson Healthcare Solutions | Smart Software for Modern Healthcare</title>
+    <meta name="description" content="Hudson Healthcare Solutions provides Electronic Health Record (EHR) systems, Practice Management Software, Telehealth Platforms, Patient Portals & Engagement Tools, Billing & Revenue Cycle Management, and AI-Driven Analytics for Healthcare.">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Hudson Healthcare Solutions | Smart Software for Modern Healthcare">
+    <meta property="og:description" content="Hudson Healthcare Solutions provides Electronic Health Record (EHR) systems, Practice Management Software, Telehealth Platforms, Patient Portals & Engagement Tools, Billing & Revenue Cycle Management, and AI-Driven Analytics for Healthcare.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hudson Healthcare Solutions">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏥%3C/text%3E%3C/svg%3E">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Hudson Healthcare Solutions",
+      "url": "https://ithudson.com",
+      "telephone": "+1-551-800-3255",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "221 River Street, Suite 9",
+        "addressLocality": "Hoboken",
+        "addressRegion": "NJ",
+        "postalCode": "07030",
+        "addressCountry": "US"
+      }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            background-color: #0f172a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header */
+        header {
+            background-color: #1e293b;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: #0d9488;
+            outline: none;
+        }
+
+        .phone-btn {
+            background-color: #0d9488;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .phone-btn:hover,
+        .phone-btn:focus {
+            background-color: #0f766e;
+            outline: none;
+        }
+
+        /* Main content */
+        main {
+            margin-top: 80px;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: #0d9488;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #0f766e;
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #0d9488;
+            border: 2px solid #0d9488;
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background-color: #0d9488;
+            color: #ffffff;
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        /* Cards */
+        .card {
+            background-color: #1e293b;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        /* About */
+        .about {
+            background-color: #1e293b;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .address {
+            color: #94a3b8;
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        /* Solutions */
+        .solutions .grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .solution-card {
+            text-align: center;
+        }
+
+        .solution-card h3 {
+            color: #0d9488;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Why Hudson */
+        .why {
+            background-color: #1e293b;
+        }
+
+        .why-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .why-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #cbd5e1;
+        }
+
+        .why-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #0d9488;
+            font-weight: bold;
+        }
+
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: #0d9488;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover,
+        .contact-item a:focus {
+            color: #0f766e;
+            outline: none;
+        }
+
+        /* Form */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #374151;
+            border-radius: 0.5rem;
+            background-color: #374151;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #0d9488;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-helper {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: #065f46;
+            color: #d1fae5;
+            border: 1px solid #059669;
+        }
+
+        .form-message.error {
+            background-color: #7f1d1d;
+            color: #fecaca;
+            border: 1px solid #dc2626;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            padding: 3rem 0 2rem;
+            border-top: 1px solid #374151;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-info {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-chips {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .chip {
+            background-color: #374151;
+            color: #94a3b8;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .hero {
+                padding: 4rem 0;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-chips {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus styles for accessibility */
+        *:focus-visible {
+            outline: 2px solid #0d9488;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home" class="logo">Hudson Healthcare Solutions</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#why">Why Hudson</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:+15518003255" class="phone-btn">Call: 551-800-3255</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Smart Software for Modern Healthcare.</h1>
+                    <p>U.S. healthcare focus.</p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">Talk to us</a>
+                        <a href="#solutions" class="btn btn-secondary">See our solutions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Hudson Healthcare Solutions</h2>
+                <div class="about-content">
+                    <p>Our mission is improving care delivery and efficiency through technology. We specialize in developing innovative healthcare software solutions that empower medical professionals and enhance patient outcomes across the United States.</p>
+                    <p class="address">221 River Street, Suite 9, Hoboken, NJ 07030</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Section -->
+        <section id="solutions">
+            <div class="container">
+                <h2>Our Solutions</h2>
+                <div class="grid grid-3">
+                    <div class="card solution-card">
+                        <h3>Electronic Health Record (EHR) systems</h3>
+                        <p>Comprehensive digital patient record management for streamlined healthcare delivery.</p>
+                    </div>
+                    <div class="card solution-card">
+                        <h3>Practice Management Software</h3>
+                        <p>Complete practice operations management from scheduling to billing and reporting.</p>
+                    </div>
+                    <div class="card solution-card">
+                        <h3>Telehealth Platforms</h3>
+                        <p>Secure virtual care solutions connecting patients and providers remotely.</p>
+                    </div>
+                    <div class="card solution-card">
+                        <h3>Patient Portals & Engagement Tools</h3>
+                        <p>Empowering patients with easy access to their health information and care team.</p>
+                    </div>
+                    <div class="card solution-card">
+                        <h3>Billing & Revenue Cycle Management</h3>
+                        <p>Automated billing processes to optimize revenue and reduce administrative burden.</p>
+                    </div>
+                    <div class="card solution-card">
+                        <h3>AI-Driven Analytics for Healthcare</h3>
+                        <p>Advanced analytics and insights to improve clinical outcomes and operational efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Hudson Section -->
+        <section id="why" class="why">
+            <div class="container">
+                <h2>Why Hudson</h2>
+                <div class="grid grid-2">
+                    <div class="card why-card">
+                        <h3>Healthcare-focused expertise</h3>
+                        <ul>
+                            <li>Deep understanding of healthcare workflows</li>
+                            <li>Compliance with HIPAA and U.S. regulations</li>
+                            <li>Proven track record in healthcare technology</li>
+                        </ul>
+                    </div>
+                    <div class="card why-card">
+                        <h3>Scalable solutions</h3>
+                        <ul>
+                            <li>Solutions for clinics of all sizes</li>
+                            <li>Hospital-grade enterprise systems</li>
+                            <li>Specialty practice customizations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+15518003255">551-800-3255</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Address</h3>
+                        <p><a href="https://maps.google.com/?q=221+River+Street,+Suite+9,+Hoboken,+NJ+07030" target="_blank" rel="noopener">221 River Street, Suite 9<br>Hoboken, NJ 07030</a></p>
+                    </div>
+                </div>
+
+                <div class="form-container">
+                    <form id="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                            <div class="form-helper">Please do not include personal medical information or PHI in this form.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                    <div id="form-message" class="form-message"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; <span id="current-year">2024</span> Hudson Healthcare Solutions | 551-800-3255 | Hoboken, NJ</p>
+                </div>
+                <div class="footer-chips">
+                    <span class="chip">Case Studies (coming soon)</span>
+                    <span class="chip">Blog / Insights (coming soon)</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Set current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Form submission handling
+            const form = document.getElementById('contact-form');
+            const messageDiv = document.getElementById('form-message');
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                const action = form.getAttribute('action');
+
+                // Check if placeholder form ID is still present
+                if (action.includes('your_form_id')) {
+                    alert('Please replace "your_form_id" in the form action with your actual Formspree form ID.');
+                    return;
+                }
+
+                try {
+                    const response = await fetch(action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        messageDiv.className = 'form-message success';
+                        messageDiv.textContent = 'Thank you for your message! We\'ll get back to you soon.';
+                        messageDiv.style.display = 'block';
+                        form.reset();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    messageDiv.className = 'form-message error';
+                    messageDiv.textContent = 'Sorry, there was an error sending your message. Please try again.';
+                    messageDiv.style.display = 'block';
+                }
+            });
+
+            // Smooth scrolling for navigation links (optional enhancement)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
