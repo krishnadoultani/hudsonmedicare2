@@ -1,0 +1,84 @@
+Create a single-file, production-ready index.html (no external CSS/JS, no frameworks) for a small business website called Hudson Healthcare Solutions (domain: ithudson.com). It must be a modern, responsive, accessible landing page with embedded CSS and a tiny bit of vanilla JS. Use semantic HTML5.
+
+Brand & copy
+
+Title tag: “Hudson Healthcare Solutions | Smart Software for Modern Healthcare”
+
+One-line positioning (hero H1): “Smart Software for Modern Healthcare.”
+
+Short intro: U.S. healthcare focus.
+
+Primary CTA button: “Talk to us” → scroll to Contact.
+
+Secondary CTA: “See our solutions” → scroll to Solutions.
+
+Sections (in this order):
+
+Header/Nav: Logo text “Hudson Healthcare Solutions”, links to #home #about #solutions #why #contact, plus a visible “Call: 551-800-3255” button using tel:+15518003255. Sticky header on scroll.
+
+Hero (#home): Headline, 1–2 sentence subhead, CTA buttons.
+
+About (#about): Short background + mission: improving care delivery and efficiency through technology. Include address line “221 River Street, Suite 9, Hoboken, NJ 07030”.
+
+Solutions (#solutions): Grid of 6 cards, each with a short sentence:
+
+Electronic Health Record (EHR) systems
+
+Practice Management Software
+
+Telehealth Platforms
+
+Patient Portals & Engagement Tools
+
+Billing & Revenue Cycle Management
+
+AI-Driven Analytics for Healthcare
+
+Why Hudson (#why): Two cards/lists: “Healthcare-focused expertise”, “Compliance with HIPAA and U.S. regulations” and “Scalable solutions for clinics, hospitals, specialty practices.”
+
+Contact (#contact):
+
+Phone: 551-800-3255 (tel link)
+
+Address: 221 River Street, Suite 9, Hoboken, NJ 07030 (link to Google Maps)
+
+Simple contact form (Name, Email, Message). Form action: https://formspree.io/f/your_form_id (placeholder). Add helper text: “Please do not include personal medical information or PHI in this form.”
+
+JS should intercept submit, POST to the action, show a thank-you message on success, and show a simple alert on failure; if the placeholder your_form_id is still present, alert the user to replace it.
+
+Footer: Copyright © {currentYear} Hudson Healthcare Solutions, phone, city/state. Two muted chips: “Case Studies (coming soon)”, “Blog / Insights (coming soon)”.
+
+Design requirements
+
+Dark, professional palette; soft cards; large readable typography; nice spacing; rounded corners; subtle shadows.
+
+Mobile-first responsive layout; solution/why grids collapse to 1 column on small screens.
+
+Good color contrast, labeled inputs, focus styles.
+
+No external assets or frameworks. Include a simple emoji or SVG favicon inline.
+
+SEO & meta
+
+Meta description matching the services list.
+
+Open Graph tags (title/description/type/site_name).
+
+Add minimal Organization JSON-LD with name, URL (https://ithudson.com
+), telephone +1-551-800-3255, and the Hoboken address.
+
+JS behavior
+
+Set the current year in the footer dynamically.
+
+Smooth scroll for in-page nav is optional.
+
+Form submission as described above.
+
+Output rules
+
+Output only one code block containing the full index.html.
+
+Keep copy exactly as specified; do not invent extra sections.
+
+No Tailwind, no Bootstrap, no external fonts
