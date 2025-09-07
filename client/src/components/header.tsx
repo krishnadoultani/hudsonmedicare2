@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Shield, Heart, Zap } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,40 +65,23 @@ export default function Header() {
             Hudson Healthcare Solutions
           </button>
 
-          {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center space-x-8">
-            {[
-              { label: 'Home', id: 'home' },
-              { label: 'About', id: 'about' },
-              { label: 'Solutions', id: 'solutions' },
-              { label: 'Why', id: 'why' },
-              { label: 'Contact', id: 'contact' },
-            ].map((item) => (
-              <li key={item.id}>
-                <button
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-slate-700 hover:text-slate-900 transition-colors font-medium relative group focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 focus:ring-offset-transparent rounded px-2 py-1"
-                  data-testid={`nav-link-${item.id}`}
-                >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-slate-900 transition-all duration-300 group-hover:w-full" />
-                </button>
-              </li>
-            ))}
-            <li>
-              <Button
-                asChild
-                variant="ghost"
-                className="text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 hover:border-slate-300 transition-all focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 focus:ring-offset-transparent"
-                data-testid="call-button"
-              >
-                <a href="tel:+15518003255" className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" />
-                  Call: 551-800-3255
-                </a>
-              </Button>
-            </li>
-          </ul>
+          {/* Desktop Navigation - Trust Indicators */}
+          <div className="hidden lg:flex items-center space-x-8">
+            <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-2 text-slate-600">
+                <Shield className="h-4 w-4 text-slate-500" />
+                <span className="text-sm font-medium">HIPAA Compliant</span>
+              </div>
+              <div className="flex items-center space-x-2 text-slate-600">
+                <Heart className="h-4 w-4 text-slate-500" />
+                <span className="text-sm font-medium">24/7 Support</span>
+              </div>
+              <div className="flex items-center space-x-2 text-slate-600">
+                <Zap className="h-4 w-4 text-slate-500" />
+                <span className="text-sm font-medium">99.9% Uptime</span>
+              </div>
+            </div>
+          </div>
 
           {/* Mobile Menu Button */}
           <Button
