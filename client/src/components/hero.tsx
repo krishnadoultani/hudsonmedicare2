@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, Calendar, Users, TrendingUp } from "lucide-react";
+import { ArrowRight, Phone, Calendar, Users, TrendingUp, Sparkles, Zap, Shield, Heart } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -8,10 +8,10 @@ export default function Hero() {
   const { toast } = useToast();
   
   const stats = [
-    { number: "500+", label: "Healthcare Providers Served" },
-    { number: "99.9%", label: "Uptime Guarantee" },
-    { number: "24/7", label: "Support Available" },
-    { number: "15+", label: "Years Experience" }
+    { number: "500+", label: "Healthcare Providers Served", icon: Users },
+    { number: "99.9%", label: "Uptime Guarantee", icon: Shield },
+    { number: "24/7", label: "Support Available", icon: Heart },
+    { number: "15+", label: "Years Experience", icon: TrendingUp }
   ];
 
   useEffect(() => {
@@ -45,29 +45,50 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with gradient and pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-light-bg to-accent/20" />
+      {/* Enhanced Background with multiple layers */}
+      <div className="absolute inset-0 gradient-hero" />
       <div className="absolute inset-0 grid-pattern" />
+      <div className="absolute inset-0 dot-pattern" />
       
-      <div className="container relative z-10 px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-10 animate-float">
+        <div className="w-20 h-20 bg-gradient-primary rounded-full opacity-20 blur-xl" />
+      </div>
+      <div className="absolute top-40 right-20 animate-float" style={{ animationDelay: '1s' }}>
+        <div className="w-16 h-16 bg-gradient-accent rounded-full opacity-20 blur-xl" />
+      </div>
+      <div className="absolute bottom-40 left-20 animate-float" style={{ animationDelay: '2s' }}>
+        <div className="w-24 h-24 bg-primary-orange rounded-full opacity-15 blur-xl" />
+      </div>
+      
+      <div className="container relative z-10 px-4 sm:px-6 lg:px-8 text-center">
+        {/* Premium Badge */}
+        <div className="inline-flex items-center gap-2 bg-glass-bg backdrop-blur-glass border border-primary-orange/20 rounded-full px-4 py-2 mb-8 animate-fade-in">
+          <Sparkles className="h-4 w-4 text-primary-orange animate-pulse-glow" />
+          <span className="text-sm font-medium text-text-primary">Trusted by 500+ Healthcare Providers</span>
+        </div>
+
         <h1 
-          className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 text-gradient leading-tight"
+          className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 text-gradient-primary leading-tight animate-slide-up"
           data-testid="hero-title"
         >
-          Smart Software for Modern Healthcare.
+          Smart Software for
+          <br />
+          <span className="text-gradient-accent">Modern Healthcare</span>
         </h1>
         
         <p 
-          className="text-lg sm:text-xl lg:text-2xl text-text-secondary mb-12 max-w-4xl mx-auto leading-relaxed"
+          className="text-lg sm:text-xl lg:text-2xl text-text-secondary mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in"
+          style={{ animationDelay: '0.2s' }}
           data-testid="hero-subtitle"
         >
           Empowering healthcare providers across the United States with innovative technology solutions that improve patient care and streamline operations.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <Button
             onClick={handleCallClick}
-            className="bg-primary-orange hover:bg-primary-orange/90 text-white font-semibold px-8 py-4 rounded-xl text-lg shadow-orange hover:shadow-orange-hover transition-smooth hover:-translate-y-1 group"
+            className="gradient-primary hover:shadow-glow text-white font-semibold px-8 py-4 rounded-xl text-lg transition-spring hover-lift premium-glow group"
             data-testid="button-primary-cta"
           >
             <Phone className="mr-2 h-5 w-5" />
@@ -78,7 +99,7 @@ export default function Hero() {
           <Button
             onClick={handleScheduleClick}
             variant="outline"
-            className="border-2 border-primary-orange text-text-primary hover:bg-primary-orange hover:text-white font-semibold px-8 py-4 rounded-xl text-lg transition-smooth hover:-translate-y-1 bg-transparent"
+            className="glass-card border-2 border-primary-orange/30 text-text-primary hover:bg-primary-orange hover:text-white font-semibold px-8 py-4 rounded-xl text-lg transition-spring hover-lift hover:border-primary-orange"
             data-testid="button-secondary-cta"
           >
             <Calendar className="mr-2 h-5 w-5" />
@@ -87,17 +108,39 @@ export default function Hero() {
           </Button>
         </div>
         
-        {/* Dynamic Stats */}
-        <div className="mt-16">
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-glow border border-primary-orange/20">
+        {/* Enhanced Dynamic Stats */}
+        <div className="mt-16 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="glass-card rounded-2xl p-8 shadow-premium border border-primary-orange/20 hover-lift">
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary-orange mb-2 transition-all duration-500">
-                {stats[currentStat].number}
+              <div className="flex items-center justify-center mb-4">
+                {(() => {
+                  const IconComponent = stats[currentStat].icon;
+                  return <IconComponent className="h-8 w-8 text-primary-orange mr-3 animate-pulse-glow" />;
+                })()}
+                <div className="text-4xl font-bold text-gradient-primary transition-all duration-500">
+                  {stats[currentStat].number}
+                </div>
               </div>
-              <div className="text-text-secondary font-medium">
+              <div className="text-text-secondary font-medium text-lg">
                 {stats[currentStat].label}
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="mt-12 flex flex-wrap justify-center items-center gap-8 opacity-60 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+          <div className="flex items-center gap-2">
+            <Shield className="h-5 w-5 text-primary-orange" />
+            <span className="text-sm font-medium text-text-secondary">HIPAA Compliant</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Zap className="h-5 w-5 text-primary-blue" />
+            <span className="text-sm font-medium text-text-secondary">99.9% Uptime</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Heart className="h-5 w-5 text-primary-teal" />
+            <span className="text-sm font-medium text-text-secondary">24/7 Support</span>
           </div>
         </div>
       </div>

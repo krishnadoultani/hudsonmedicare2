@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, MapPin, Send } from "lucide-react";
+import { Phone, MapPin, Send, Mail, Clock, Sparkles } from "lucide-react";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -81,17 +81,27 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-gradient-to-br from-accent/10 to-light-bg">
-      <div className="container px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 lg:py-32 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-light-bg" />
+      <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-primary rounded-full opacity-10 blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-accent rounded-full opacity-10 blur-3xl" />
+      
+      <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-glass-bg backdrop-blur-glass border border-primary-orange/20 rounded-full px-4 py-2 mb-6">
+            <Sparkles className="h-4 w-4 text-primary-orange" />
+            <span className="text-sm font-medium text-text-primary">Get in Touch</span>
+          </div>
+          
           <h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-text-primary"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gradient-primary scroll-reveal"
             data-testid="contact-title"
           >
             Get in Touch
           </h2>
           <p 
-            className="text-lg sm:text-xl text-text-secondary max-w-4xl mx-auto"
+            className="text-lg sm:text-xl text-text-secondary max-w-4xl mx-auto scroll-reveal"
             data-testid="contact-subtitle"
           >
             Ready to transform your healthcare operations? Let's discuss your specific needs and goals.
@@ -100,20 +110,22 @@ export default function Contact() {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
-          <Card className="bg-card-bg border-primary-orange/20 shadow-glow backdrop-blur-glass animate-fade-in">
+          <Card className="glass-card border-primary-orange/20 shadow-premium hover-lift scroll-reveal">
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-text-primary">
+              <CardTitle className="text-2xl font-semibold text-gradient-primary">
                 Contact Information
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-8">
-              <div className="flex items-start space-x-4">
-                <Phone className="h-6 w-6 text-primary-orange mt-1" />
+              <div className="flex items-start space-x-4 p-4 bg-primary-orange/10 rounded-xl hover:bg-primary-orange/20 transition-spring">
+                <div className="p-2 bg-primary-orange rounded-lg">
+                  <Phone className="h-5 w-5 text-white" />
+                </div>
                 <div>
                   <h4 className="font-semibold text-primary-orange mb-2">Phone</h4>
                   <a 
                     href="tel:+15518003255"
-                    className="text-text-secondary hover:text-primary-orange transition-smooth text-lg"
+                    className="text-text-secondary hover:text-primary-orange transition-spring text-lg font-medium"
                     data-testid="contact-phone"
                   >
                     551-800-3255
@@ -121,15 +133,17 @@ export default function Contact() {
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4">
-                <MapPin className="h-6 w-6 text-primary-orange mt-1" />
+              <div className="flex items-start space-x-4 p-4 bg-primary-blue/10 rounded-xl hover:bg-primary-blue/20 transition-spring">
+                <div className="p-2 bg-primary-blue rounded-lg">
+                  <MapPin className="h-5 w-5 text-white" />
+                </div>
                 <div>
-                  <h4 className="font-semibold text-primary-orange mb-2">Address</h4>
+                  <h4 className="font-semibold text-primary-blue mb-2">Address</h4>
                   <a 
                     href="https://maps.google.com/?q=221+River+Street,+Suite+9,+Hoboken,+NJ+07030"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-text-secondary hover:text-primary-orange transition-smooth"
+                    className="text-text-secondary hover:text-primary-blue transition-spring"
                     data-testid="contact-address"
                   >
                     221 River Street, Suite 9<br />
@@ -137,13 +151,42 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
+
+              <div className="flex items-start space-x-4 p-4 bg-primary-teal/10 rounded-xl hover:bg-primary-teal/20 transition-spring">
+                <div className="p-2 bg-primary-teal rounded-lg">
+                  <Mail className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-primary-teal mb-2">Email</h4>
+                  <a 
+                    href="mailto:info@hudsonhealthcare.com"
+                    className="text-text-secondary hover:text-primary-teal transition-spring"
+                  >
+                    info@hudsonhealthcare.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4 p-4 bg-primary-purple/10 rounded-xl hover:bg-primary-purple/20 transition-spring">
+                <div className="p-2 bg-primary-purple rounded-lg">
+                  <Clock className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-primary-purple mb-2">Business Hours</h4>
+                  <div className="text-text-secondary">
+                    Monday - Friday: 8:00 AM - 6:00 PM<br />
+                    Saturday: 9:00 AM - 2:00 PM<br />
+                    Sunday: Closed
+                  </div>
+                </div>
+              </div>
             </CardContent>
           </Card>
 
           {/* Contact Form */}
-          <Card className="bg-card-bg border-primary-orange/20 shadow-glow backdrop-blur-glass animate-fade-in">
+          <Card className="glass-card border-primary-orange/20 shadow-premium hover-lift scroll-reveal">
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-text-primary">
+              <CardTitle className="text-2xl font-semibold text-gradient-primary">
                 Send us a Message
               </CardTitle>
             </CardHeader>
@@ -160,7 +203,7 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="mt-2 bg-light-bg border-border-color text-text-primary focus:border-primary-orange transition-smooth"
+                    className="mt-2 glass-card border-primary-orange/30 text-text-primary focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/20 transition-spring"
                     data-testid="input-name"
                   />
                 </div>
@@ -176,7 +219,7 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="mt-2 bg-light-bg border-border-color text-text-primary focus:border-primary-orange transition-smooth"
+                    className="mt-2 glass-card border-primary-orange/30 text-text-primary focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/20 transition-spring"
                     data-testid="input-email"
                   />
                 </div>
@@ -191,7 +234,7 @@ export default function Contact() {
                     required
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="mt-2 bg-light-bg border-border-color text-text-primary focus:border-primary-orange transition-smooth min-h-[120px] resize-y"
+                    className="mt-2 glass-card border-primary-orange/30 text-text-primary focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/20 transition-spring min-h-[120px] resize-y"
                     data-testid="textarea-message"
                   />
                   <p className="text-sm text-text-muted mt-2">
@@ -202,7 +245,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary-orange hover:bg-primary-orange/90 text-white font-semibold py-3 rounded-xl transition-smooth hover:-translate-y-1 disabled:transform-none disabled:opacity-60"
+                  className="w-full gradient-primary hover:shadow-glow text-white font-semibold py-3 rounded-xl transition-spring hover-lift disabled:transform-none disabled:opacity-60 premium-glow"
                   data-testid="button-submit"
                 >
                   {isSubmitting ? (

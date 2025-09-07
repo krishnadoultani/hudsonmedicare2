@@ -25,12 +25,35 @@ export default function Home() {
       }
     };
 
+    // Set up scroll reveal animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    // Observe all elements with scroll-reveal class
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    revealElements.forEach((el) => observer.observe(el));
+
     document.addEventListener('click', handleAnchorClick);
-    return () => document.removeEventListener('click', handleAnchorClick);
+    
+    return () => {
+      document.removeEventListener('click', handleAnchorClick);
+      revealElements.forEach((el) => observer.unobserve(el));
+    };
   }, []);
 
   return (
-    <div className="min-h-screen bg-light-bg">
+    <div className="min-h-screen bg-light-bg overflow-x-hidden">
       <Header />
       <main className="pt-20">
         <Hero />
