@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Shield, Users, Award, Sparkles, Zap, Heart } from "lucide-react";
+import { Check, Shield, Users, Award, Sparkles, Zap, Heart, Database, Brain, Video } from "lucide-react";
 
 const whyReasons = [
   {
@@ -29,9 +29,9 @@ const whyReasons = [
 const trustIndicators = [
   { icon: Award, label: "FHIR Integration", color: "primary-orange" },
   { icon: Users, label: "Population Health", color: "primary-blue" },
-  { icon: Shield, label: "Data Governance", color: "primary-teal" },
-  { icon: Zap, label: "Machine Learning", color: "primary-purple" },
-  { icon: Heart, label: "Telehealth Ready", color: "primary-green" }
+  { icon: Database, label: "Data Governance", color: "primary-teal" },
+  { icon: Brain, label: "Machine Learning", color: "primary-purple" },
+  { icon: Video, label: "Telehealth Ready", color: "primary-green" }
 ];
 
 export default function WhyHudson() {

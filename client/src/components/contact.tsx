@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, MapPin, Send, Mail, Clock, Sparkles, Shield, Zap, Heart } from "lucide-react";
+import { Phone, MapPin, Send, Mail, Clock, Sparkles, Shield, Zap, Heart, Rocket, Lock, Cloud, Users } from "lucide-react";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -117,25 +117,25 @@ export default function Contact() {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary-blue rounded-full flex items-center justify-center">
-                <Phone className="h-4 w-4 text-white" />
+                <Rocket className="h-4 w-4 text-white" />
               </div>
               <span className="text-sm font-medium text-text-secondary">Rapid Deployment</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary-teal rounded-full flex items-center justify-center">
-                <Shield className="h-4 w-4 text-white" />
+                <Lock className="h-4 w-4 text-white" />
               </div>
               <span className="text-sm font-medium text-text-secondary">Secure by Design</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary-purple rounded-full flex items-center justify-center">
-                <Zap className="h-4 w-4 text-white" />
+                <Cloud className="h-4 w-4 text-white" />
               </div>
               <span className="text-sm font-medium text-text-secondary">Cloud-Native</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary-green rounded-full flex items-center justify-center">
-                <Heart className="h-4 w-4 text-white" />
+                <Users className="h-4 w-4 text-white" />
               </div>
               <span className="text-sm font-medium text-text-secondary">Provider-Focused</span>
             </div>
