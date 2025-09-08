@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Shield, Heart, Zap } from "lucide-react";
+import { Menu, X, Phone, Sparkles, Shield, Heart, Zap } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -8,7 +8,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -48,90 +48,105 @@ export default function Header() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-spring ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' 
-          : 'bg-transparent py-4'
-      } border-b border-slate-200/20`}
+          ? 'glass-card shadow-premium border-b border-primary-orange/30' 
+          : 'gradient-header border-b border-primary-orange/20'
+      }`}
       data-testid="header"
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Primary">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center h-20">
           <button
             onClick={() => scrollToSection('home')}
-            className="text-xl font-bold text-slate-900 hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 focus:ring-offset-transparent rounded"
+            className="text-xl font-bold text-gradient-primary hover:opacity-80 transition-spring hover-scale flex items-center gap-2"
             data-testid="logo-link"
           >
+            <Sparkles className="h-6 w-6 text-primary-orange animate-pulse-glow" />
             Hudson Healthcare Solutions
           </button>
 
-          {/* Desktop Navigation - Trust Indicators */}
-          <div className="hidden lg:flex items-center space-x-8">
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center space-x-2 text-slate-600">
-                <Shield className="h-4 w-4 text-slate-500" />
-                <span className="text-sm font-medium">HIPAA Compliant</span>
-              </div>
-              <div className="flex items-center space-x-2 text-slate-600">
-                <Heart className="h-4 w-4 text-slate-500" />
-                <span className="text-sm font-medium">24/7 Support</span>
-              </div>
-              <div className="flex items-center space-x-2 text-slate-600">
-                <Zap className="h-4 w-4 text-slate-500" />
-                <span className="text-sm font-medium">99.9% Uptime</span>
-              </div>
-            </div>
-          </div>
+          {/* Desktop Navigation */}
+          <ul className="hidden lg:flex items-center space-x-8">
+            {[
+              { label: 'Home', id: 'home' },
+              { label: 'About', id: 'about' },
+              { label: 'Solutions', id: 'solutions' },
+              { label: 'Why', id: 'why' },
+              { label: 'Contact', id: 'contact' },
+            ].map((item) => (
+              <li key={item.id}>
+                <button
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-text-secondary hover:text-primary-orange transition-spring font-medium relative group px-3 py-2 rounded-lg hover:bg-primary-orange/10"
+                  data-testid={`nav-link-${item.id}`}
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-3 right-3 h-0.5 bg-gradient-primary rounded-full scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+                </button>
+              </li>
+            ))}
+            <li>
+              <Button
+                asChild
+                className="gradient-primary hover:shadow-glow text-white font-semibold px-6 py-2 rounded-xl transition-spring hover-lift premium-glow"
+                data-testid="call-button"
+              >
+                <a href="tel:+15518003255" className="flex items-center gap-2">
+                  <Phone className="h-4 w-4" />
+                  Call: 551-800-3255
+                </a>
+              </Button>
+            </li>
+          </ul>
 
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 focus:ring-offset-transparent"
+            className="lg:hidden text-text-primary hover:bg-primary-orange/10 transition-spring"
             data-testid="mobile-menu-toggle"
             aria-label="Toggle mobile menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} className="transition-spring" /> : <Menu size={24} className="transition-spring" />}
           </Button>
         </div>
 
-        {/* Mobile Navigation Overlay */}
+        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 bg-white/95 backdrop-blur-md z-50">
-            <div className="flex flex-col items-center justify-center h-full space-y-8">
-              <ul className="flex flex-col items-center space-y-6">
-                {[
-                  { label: 'Home', id: 'home' },
-                  { label: 'About', id: 'about' },
-                  { label: 'Solutions', id: 'solutions' },
-                  { label: 'Why', id: 'why' },
-                  { label: 'Contact', id: 'contact' },
-                ].map((item) => (
-                  <li key={item.id}>
-                    <button
-                      onClick={() => scrollToSection(item.id)}
-                      className="text-slate-700 hover:text-slate-900 transition-colors font-medium text-xl focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 focus:ring-offset-transparent rounded px-4 py-2"
-                      data-testid={`mobile-nav-link-${item.id}`}
-                    >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-              
-              <Button
-                asChild
-                variant="ghost"
-                className="text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 hover:border-slate-300 transition-all text-lg px-8 py-3 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 focus:ring-offset-transparent"
-                data-testid="mobile-call-button"
-              >
-                <a href="tel:+15518003255" className="flex items-center gap-2">
-                  <Phone className="h-5 w-5" />
-                  Call: 551-800-3255
-                </a>
-              </Button>
-            </div>
+          <div className="lg:hidden py-4 border-t border-primary-orange/20 animate-slide-in">
+            <ul className="flex flex-col space-y-4">
+              {[
+                { label: 'Home', id: 'home' },
+                { label: 'About', id: 'about' },
+                { label: 'Solutions', id: 'solutions' },
+                { label: 'Why', id: 'why' },
+                { label: 'Contact', id: 'contact' },
+              ].map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-text-secondary hover:text-primary-orange transition-spring font-medium block w-full text-left px-3 py-2 rounded-lg hover:bg-primary-orange/10"
+                    data-testid={`mobile-nav-link-${item.id}`}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+              <li className="pt-4">
+                <Button
+                  asChild
+                  className="gradient-primary hover:shadow-glow text-white font-semibold px-6 py-2 rounded-xl w-full transition-spring hover-lift"
+                  data-testid="mobile-call-button"
+                >
+                  <a href="tel:+15518003255" className="flex items-center justify-center gap-2">
+                    <Phone className="h-4 w-4" />
+                    Call: 551-800-3255
+                  </a>
+                </Button>
+              </li>
+            </ul>
           </div>
         )}
       </nav>

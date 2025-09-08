@@ -1,11 +1,25 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, Menu, X, Shield, Heart, Zap } from "lucide-react";
+import { ArrowRight, Phone, Calendar, Users, TrendingUp, Sparkles, Zap, Shield, Heart } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Hero() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentStat, setCurrentStat] = useState(0);
   const { toast } = useToast();
+  
+  const stats = [
+    { number: "500+", label: "Healthcare Providers Served", icon: Users },
+    { number: "99.9%", label: "Uptime Guarantee", icon: Shield },
+    { number: "24/7", label: "Support Available", icon: Heart },
+    { number: "15+", label: "Years Experience", icon: TrendingUp }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentStat((prev) => (prev + 1) % stats.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -15,119 +29,117 @@ export default function Hero() {
         block: 'start'
       });
     }
-    setIsMenuOpen(false);
   };
 
   const handleCallClick = () => {
     window.open('tel:+15518003255', '_self');
   };
 
-  return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100">
-      {/* Enhanced Background architectural elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-20 left-10 w-40 h-[500px] bg-gradient-to-b from-slate-300/40 to-slate-400/25 rounded-l-3xl transform -skew-x-12 shadow-lg"></div>
-          <div className="absolute top-32 left-40 w-32 h-[420px] bg-gradient-to-b from-slate-400/35 to-slate-500/20 rounded-l-2xl transform -skew-x-12 shadow-md"></div>
-          <div className="absolute top-44 left-64 w-24 h-[360px] bg-gradient-to-b from-slate-500/30 to-slate-600/15 rounded-l-xl transform -skew-x-12 shadow-sm"></div>
-        </div>
-        <div className="absolute top-0 right-0 w-full h-full">
-          <div className="absolute top-16 right-10 w-36 h-[480px] bg-gradient-to-b from-slate-300/35 to-slate-400/20 rounded-r-3xl transform skew-x-12 shadow-lg"></div>
-          <div className="absolute top-28 right-40 w-28 h-[400px] bg-gradient-to-b from-slate-400/30 to-slate-500/15 rounded-r-2xl transform skew-x-12 shadow-md"></div>
-          <div className="absolute top-36 right-64 w-20 h-[340px] bg-gradient-to-b from-slate-500/25 to-slate-600/10 rounded-r-xl transform skew-x-12 shadow-sm"></div>
-        </div>
-      </div>
+  const handleScheduleClick = () => {
+    toast({
+      title: "Schedule a Demo",
+      description: "Please call us at 551-800-3255 to schedule your personalized demo.",
+    });
+  };
 
-      {/* Enhanced Navigation Menu Card */}
-      <div className="absolute top-8 right-8 z-50">
-        <div className="bg-white/95 backdrop-blur-sm border border-slate-200/60 rounded-2xl p-4 shadow-xl">
-          <div className="flex items-center gap-3">
-            <span className="text-slate-700 font-medium text-sm">Know more</span>
-            <ArrowRight className="h-3 w-3 text-slate-500" />
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="h-8 w-8 text-slate-600 hover:bg-slate-100 border border-slate-200 rounded-lg transition-all"
-            >
-              {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
-            </Button>
-          </div>
-          
-          {isMenuOpen && (
-            <div className="absolute top-full right-0 mt-2 bg-white/98 backdrop-blur-sm border border-slate-200/60 rounded-xl p-4 shadow-2xl min-w-[200px]">
-              <div className="space-y-2">
-                {[
-                  { label: 'Home', id: 'home' },
-                  { label: 'About', id: 'about' },
-                  { label: 'Solutions', id: 'solutions' },
-                  { label: 'Why', id: 'why' },
-                  { label: 'Contact', id: 'contact' },
-                ].map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className="block w-full text-left px-3 py-2 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors text-sm"
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
+  return (
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Enhanced Background with multiple layers */}
+      <div className="absolute inset-0 gradient-hero" />
+      <div className="absolute inset-0 grid-pattern" />
+      <div className="absolute inset-0 dot-pattern" />
+      
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-10 animate-float">
+        <div className="w-20 h-20 bg-gradient-primary rounded-full opacity-20 blur-xl" />
+      </div>
+      <div className="absolute top-40 right-20 animate-float" style={{ animationDelay: '1s' }}>
+        <div className="w-16 h-16 bg-gradient-accent rounded-full opacity-20 blur-xl" />
+      </div>
+      <div className="absolute bottom-40 left-20 animate-float" style={{ animationDelay: '2s' }}>
+        <div className="w-24 h-24 bg-primary-orange rounded-full opacity-15 blur-xl" />
       </div>
       
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8 text-center">
+        {/* Premium Badge */}
+        <div className="inline-flex items-center gap-2 bg-glass-bg backdrop-blur-glass border border-primary-orange/20 rounded-full px-4 py-2 mb-8 animate-fade-in">
+          <Sparkles className="h-4 w-4 text-primary-orange animate-pulse-glow" />
+          <span className="text-sm font-medium text-text-primary">Trusted by 500+ Healthcare Providers</span>
+        </div>
+
         <h1 
-          className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 text-slate-900 leading-tight"
+          className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 text-gradient-primary leading-tight animate-slide-up"
           data-testid="hero-title"
         >
-          Crafted for
+          Smart Software for
           <br />
-          <span className="text-slate-600">Better Care</span>
+          <span className="text-gradient-accent">Modern Healthcare</span>
         </h1>
         
         <p 
-          className="text-lg sm:text-xl lg:text-2xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+          className="text-lg sm:text-xl lg:text-2xl text-text-secondary mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in"
+          style={{ animationDelay: '0.2s' }}
           data-testid="hero-subtitle"
         >
-          Hudson Healthcare Solutions is a trusted partner that enables healthcare providers to deliver exceptional patient care through innovative technology.
+          Empowering healthcare providers across the United States with innovative technology solutions that improve patient care and streamline operations.
         </p>
-
-        {/* Additional Taglines */}
-        <div className="space-y-6 mb-16">
-          <div className="text-lg font-semibold text-slate-700">
-            Streamlining Care, End to End
-          </div>
-          <div className="flex justify-center items-center space-x-8 text-sm text-slate-500">
-            <div className="flex items-center space-x-2">
-              <Shield className="h-4 w-4" />
-              <span>Secure</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Heart className="h-4 w-4" />
-              <span>Compliant</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Zap className="h-4 w-4" />
-              <span>Healthcare-Ready</span>
+        
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <Button
+            onClick={handleCallClick}
+            className="gradient-primary hover:shadow-glow text-white font-semibold px-8 py-4 rounded-xl text-lg transition-spring hover-lift premium-glow group"
+            data-testid="button-primary-cta"
+          >
+            <Phone className="mr-2 h-5 w-5" />
+            Call Now: 551-800-3255
+            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+          </Button>
+          
+          <Button
+            onClick={handleScheduleClick}
+            variant="outline"
+            className="glass-card border-2 border-primary-orange/30 text-text-primary hover:bg-primary-orange hover:text-white font-semibold px-8 py-4 rounded-xl text-lg transition-spring hover-lift hover:border-primary-orange"
+            data-testid="button-secondary-cta"
+          >
+            <Calendar className="mr-2 h-5 w-5" />
+            Schedule Demo
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+        
+        {/* Enhanced Dynamic Stats */}
+        <div className="mt-16 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="glass-card rounded-2xl p-8 shadow-premium border border-primary-orange/20 hover-lift">
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                {(() => {
+                  const IconComponent = stats[currentStat].icon;
+                  return <IconComponent className="h-8 w-8 text-primary-orange mr-3 animate-pulse-glow" />;
+                })()}
+                <div className="text-4xl font-bold text-gradient-primary transition-all duration-500">
+                  {stats[currentStat].number}
+                </div>
+              </div>
+              <div className="text-text-secondary font-medium text-lg">
+                {stats[currentStat].label}
+              </div>
             </div>
           </div>
         </div>
-        
-        {/* Call to Action - Bottom Right */}
-        <div className="absolute bottom-8 right-8">
-          <div className="bg-white/95 backdrop-blur-sm border border-slate-200/60 rounded-2xl p-6 shadow-xl">
-            <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center">
-                <Phone className="h-8 w-8 text-slate-600" />
-              </div>
-              <div className="text-left">
-                <div className="text-sm text-slate-500 font-medium">get started</div>
-                <div className="text-lg font-bold text-slate-900">Call Now</div>
-              </div>
-            </div>
+
+        {/* Trust Indicators */}
+        <div className="mt-12 flex flex-wrap justify-center items-center gap-8 opacity-60 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+          <div className="flex items-center gap-2">
+            <Shield className="h-5 w-5 text-primary-orange" />
+            <span className="text-sm font-medium text-text-secondary">HIPAA Compliant</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Zap className="h-5 w-5 text-primary-blue" />
+            <span className="text-sm font-medium text-text-secondary">99.9% Uptime</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Heart className="h-5 w-5 text-primary-teal" />
+            <span className="text-sm font-medium text-text-secondary">24/7 Support</span>
           </div>
         </div>
       </div>
