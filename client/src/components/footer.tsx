@@ -16,7 +16,7 @@ export default function Footer() {
               className="text-text-secondary mb-2"
               data-testid="footer-copyright"
             >
-              © {currentYear} Hudson Healthcare Solutions
+              © {currentYear} Hudson IT Solutions
             </p>
             <p 
               className="text-text-secondary"
