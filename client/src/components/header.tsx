@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Sparkles, Shield, Heart, Zap } from "lucide-react";
+import { Menu, X, ArrowRight, Sparkles } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,39 +66,45 @@ export default function Header() {
             Hudson Healthcare Solutions
           </button>
 
-          {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center space-x-8">
-            {[
-              { label: 'Home', id: 'home' },
-              { label: 'About', id: 'about' },
-              { label: 'Solutions', id: 'solutions' },
-              { label: 'Why', id: 'why' },
-              { label: 'Contact', id: 'contact' },
-            ].map((item) => (
-              <li key={item.id}>
-                <button
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-text-secondary hover:text-primary-orange transition-spring font-medium relative group px-3 py-2 rounded-lg hover:bg-primary-orange/10"
-                  data-testid={`nav-link-${item.id}`}
+          {/* Desktop Navigation - Know More Card */}
+          <div className="hidden lg:flex items-center">
+            <div className="bg-glass-bg backdrop-blur-glass border border-primary-orange/20 rounded-2xl p-3 shadow-premium">
+              <div className="flex items-center gap-3">
+                <span className="text-text-primary font-medium text-sm">Know More</span>
+                <ArrowRight className="h-3 w-3 text-primary-orange" />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="h-8 w-8 text-text-primary hover:bg-primary-orange/10 border border-primary-orange/20 rounded-lg transition-spring"
                 >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-3 right-3 h-0.5 bg-gradient-primary rounded-full scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
-                </button>
-              </li>
-            ))}
-            <li>
-              <Button
-                asChild
-                className="gradient-primary hover:shadow-glow text-white font-semibold px-6 py-2 rounded-xl transition-spring hover-lift premium-glow"
-                data-testid="call-button"
-              >
-                <a href="tel:+15518003255" className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" />
-                  Call: 551-800-3255
-                </a>
-              </Button>
-            </li>
-          </ul>
+                  {isMobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
+                </Button>
+              </div>
+              
+              {isMobileMenuOpen && (
+                <div className="absolute top-full right-0 mt-2 bg-glass-bg backdrop-blur-glass border border-primary-orange/20 rounded-xl p-4 shadow-2xl min-w-[200px] z-50">
+                  <div className="space-y-2">
+                    {[
+                      { label: 'Home', id: 'home' },
+                      { label: 'About', id: 'about' },
+                      { label: 'Solutions', id: 'solutions' },
+                      { label: 'Why', id: 'why' },
+                      { label: 'Contact', id: 'contact' },
+                    ].map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => scrollToSection(item.id)}
+                        className="block w-full text-left px-3 py-2 text-text-secondary hover:text-primary-orange hover:bg-primary-orange/10 rounded-lg transition-spring text-sm"
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
 
           {/* Mobile Menu Button */}
           <Button
@@ -134,18 +140,6 @@ export default function Header() {
                   </button>
                 </li>
               ))}
-              <li className="pt-4">
-                <Button
-                  asChild
-                  className="gradient-primary hover:shadow-glow text-white font-semibold px-6 py-2 rounded-xl w-full transition-spring hover-lift"
-                  data-testid="mobile-call-button"
-                >
-                  <a href="tel:+15518003255" className="flex items-center justify-center gap-2">
-                    <Phone className="h-4 w-4" />
-                    Call: 551-800-3255
-                  </a>
-                </Button>
-              </li>
             </ul>
           </div>
         )}
