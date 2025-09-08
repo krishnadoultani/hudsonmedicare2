@@ -107,20 +107,20 @@ export default function WhyHudson() {
 
         {/* Trust Indicators */}
         <div className="text-center">
-          <h3 className="text-2xl font-bold text-gradient-primary mb-8 scroll-reveal">
+          <h3 className="text-2xl font-bold text-gradient-primary mb-4 scroll-reveal">
             Trusted by Healthcare Organizations Nationwide
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {trustIndicators.map((indicator, index) => {
               const IconComponent = indicator.icon;
               return (
                 <div 
                   key={index}
-                  className="glass-card p-6 rounded-xl text-center hover-lift scroll-reveal"
+                  className="glass-card p-4 rounded-xl text-center hover-lift scroll-reveal"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div 
-                    className="p-3 rounded-full w-fit mx-auto mb-4"
+                    className="p-2 rounded-full w-fit mx-auto mb-3"
                     style={{ 
                       backgroundColor: indicator.color === 'primary-orange' ? '#f97316' :
                                      indicator.color === 'primary-blue' ? '#3b82f6' :
@@ -129,9 +129,9 @@ export default function WhyHudson() {
                                      indicator.color === 'primary-green' ? '#10b981' : '#f97316'
                     }}
                   >
-                    <IconComponent className="h-6 w-6 text-white" />
+                    <IconComponent className="h-5 w-5 text-white" />
                   </div>
-                  <div className="text-sm font-medium text-text-secondary">
+                  <div className="text-xs font-medium text-text-secondary">
                     {indicator.label}
                   </div>
                 </div>
