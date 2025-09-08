@@ -53,13 +53,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'white', overflowX: 'hidden' }}>
-      <div style={{ padding: '20px', backgroundColor: 'red', color: 'white' }}>
-        <h1>Test - If you can see this, React is working!</h1>
-        <p>This is a test to see if the basic setup is working.</p>
-      </div>
+    <div className="min-h-screen bg-light-bg overflow-x-hidden">
       <Header />
-      <main style={{ paddingTop: '80px' }}>
+      <main className="pt-20">
         <Hero />
         <About />
         <Solutions />

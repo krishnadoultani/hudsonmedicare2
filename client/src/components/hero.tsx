@@ -73,14 +73,14 @@ export default function Hero() {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="h-8 w-8 text-slate-600 hover:bg-primary-orange/10 border border-slate-200 rounded-lg transition-spring"
+                className="h-8 w-8 text-slate-600 hover:bg-primary-orange/10 border border-primary-orange/30 rounded-lg transition-all"
               >
                 {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
               </Button>
             </div>
             
             {isMenuOpen && (
-              <div className="absolute top-full right-0 mt-2 bg-white/98 backdrop-blur-sm border border-slate-200/60 rounded-xl p-4 shadow-2xl min-w-[200px] z-50">
+              <div className="absolute top-full right-0 mt-2 bg-white/98 backdrop-blur-sm border border-primary-orange/30 rounded-xl p-4 shadow-2xl min-w-[200px] z-50">
                 <div className="space-y-2">
                   {[
                     { label: 'Home', id: 'home' },
@@ -92,7 +92,7 @@ export default function Hero() {
                     <button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className="block w-full text-left px-3 py-2 text-slate-700 hover:text-primary-orange hover:bg-slate-100 rounded-lg transition-spring text-sm"
+                      className="block w-full text-left px-3 py-2 text-slate-700 hover:bg-primary-orange/10 rounded-lg transition-colors text-sm"
                     >
                       {item.label}
                     </button>
@@ -175,24 +175,24 @@ export default function Hero() {
         {/* Trust Indicators */}
         <div className="mt-8 flex flex-wrap justify-center items-center gap-8 opacity-60 animate-fade-in" style={{ animationDelay: '1s' }}>
           <div className="flex items-center gap-2">
-            <Brain className="h-5 w-5 text-primary-orange" />
-            <span className="text-sm font-medium text-text-secondary">AI-Driven</span>
+            <Shield className="h-5 w-5 text-primary-orange" />
+            <span className="text-sm font-medium text-text-secondary">HIPAA Compliant</span>
           </div>
           <div className="flex items-center gap-2">
-            <Target className="h-5 w-5 text-primary-blue" />
-            <span className="text-sm font-medium text-text-secondary">Precision Care</span>
+            <Zap className="h-5 w-5 text-primary-blue" />
+            <span className="text-sm font-medium text-text-secondary">99.9% Uptime</span>
           </div>
           <div className="flex items-center gap-2">
-            <TrendingUp className="h-5 w-5 text-primary-teal" />
-            <span className="text-sm font-medium text-text-secondary">Outcome-Focused</span>
+            <Heart className="h-5 w-5 text-primary-teal" />
+            <span className="text-sm font-medium text-text-secondary">24/7 Support</span>
           </div>
           <div className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-primary-purple" />
-            <span className="text-sm font-medium text-text-secondary">Future-Ready</span>
+            <span className="text-sm font-medium text-text-secondary">Innovation First</span>
           </div>
           <div className="flex items-center gap-2">
             <Users className="h-5 w-5 text-primary-green" />
-            <span className="text-sm font-medium text-text-secondary">Provider-First</span>
+            <span className="text-sm font-medium text-text-secondary">Provider-Focused</span>
           </div>
         </div>
       </div>

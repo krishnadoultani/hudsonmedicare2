@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, MapPin, Send, Mail, Clock, Sparkles, Brain, Target, TrendingUp, Users, Award } from "lucide-react";
+import { Phone, MapPin, Send, Mail, Clock, Sparkles, Shield, Zap, Heart } from "lucide-react";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -88,43 +88,6 @@ export default function Contact() {
       <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-accent rounded-full opacity-10 blur-3xl" />
       
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Trust Indicators */}
-        <div className="text-center mb-12">
-          <div className="flex flex-wrap justify-center items-center gap-8 mb-8">
-            <div className="flex items-center gap-2 text-text-secondary">
-              <Brain className="h-5 w-5 text-primary-orange" />
-              <span className="text-sm font-medium">Smart Analytics</span>
-            </div>
-            <div className="flex items-center gap-2 text-text-secondary">
-              <Target className="h-5 w-5 text-primary-blue" />
-              <span className="text-sm font-medium">Accurate Diagnosis</span>
-            </div>
-            <div className="flex items-center gap-2 text-text-secondary">
-              <TrendingUp className="h-5 w-5 text-primary-teal" />
-              <span className="text-sm font-medium">Efficiency Boost</span>
-            </div>
-            <div className="flex items-center gap-2 text-text-secondary">
-              <Users className="h-5 w-5 text-primary-purple" />
-              <span className="text-sm font-medium">Team Collaboration</span>
-            </div>
-            <div className="flex items-center gap-2 text-text-secondary">
-              <Award className="h-5 w-5 text-primary-green" />
-              <span className="text-sm font-medium">Quality Assurance</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Call to Action Button */}
-        <div className="text-center mb-16">
-          <Button
-            className="gradient-primary hover:shadow-glow text-white font-semibold px-8 py-4 rounded-xl text-lg transition-spring hover-lift premium-glow group mb-8"
-            data-testid="contact-cta-button"
-          >
-            <Sparkles className="mr-2 h-5 w-5" />
-            Get in Touch
-          </Button>
-        </div>
-
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-glass-bg backdrop-blur-glass border border-primary-orange/20 rounded-full px-4 py-2 mb-6">
             <Sparkles className="h-4 w-4 text-primary-orange" />
@@ -138,11 +101,45 @@ export default function Contact() {
             Get in Touch
           </h2>
           <p 
-            className="text-lg sm:text-xl text-text-secondary max-w-4xl mx-auto scroll-reveal"
+            className="text-lg sm:text-xl text-text-secondary max-w-4xl mx-auto mb-8 scroll-reveal"
             data-testid="contact-subtitle"
           >
             Ready to transform your healthcare operations? Let's discuss your specific needs and goals.
           </p>
+          
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center items-center gap-8 mb-12 opacity-80 scroll-reveal">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary-orange rounded-full flex items-center justify-center">
+                <Sparkles className="h-4 w-4 text-white" />
+              </div>
+              <span className="text-sm font-medium text-text-secondary">Innovation First</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary-blue rounded-full flex items-center justify-center">
+                <Phone className="h-4 w-4 text-white" />
+              </div>
+              <span className="text-sm font-medium text-text-secondary">500+ Healthcare Partners</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary-teal rounded-full flex items-center justify-center">
+                <Shield className="h-4 w-4 text-white" />
+              </div>
+              <span className="text-sm font-medium text-text-secondary">HIPAA Compliant</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary-purple rounded-full flex items-center justify-center">
+                <Zap className="h-4 w-4 text-white" />
+              </div>
+              <span className="text-sm font-medium text-text-secondary">99.9% Uptime</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary-green rounded-full flex items-center justify-center">
+                <Heart className="h-4 w-4 text-white" />
+              </div>
+              <span className="text-sm font-medium text-text-secondary">24/7 Support</span>
+            </div>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
