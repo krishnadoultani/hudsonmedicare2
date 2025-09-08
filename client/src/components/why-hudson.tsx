@@ -27,11 +27,11 @@ const whyReasons = [
 ];
 
 const trustIndicators = [
-  { icon: Shield, label: "HIPAA Compliant", color: "primary-orange" },
-  { icon: Zap, label: "99.9% Uptime", color: "primary-blue" },
-  { icon: Heart, label: "24/7 Support", color: "primary-teal" },
-  { icon: Brain, label: "AI-Powered", color: "primary-purple" },
-  { icon: Target, label: "Precision Focused", color: "primary-green" }
+  { icon: Award, label: "Clinical Excellence", color: "primary-orange" },
+  { icon: Users, label: "Provider Trusted", color: "primary-blue" },
+  { icon: Sparkles, label: "Tech Innovation", color: "primary-teal" },
+  { icon: Heart, label: "Care Quality", color: "primary-purple" },
+  { icon: Zap, label: "Rapid Deployment", color: "primary-green" }
 ];
 
 export default function WhyHudson() {

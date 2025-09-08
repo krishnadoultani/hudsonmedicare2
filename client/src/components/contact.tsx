@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, MapPin, Send, Mail, Clock, Sparkles, Shield, Zap, Heart, Brain, Target } from "lucide-react";
+import { Phone, MapPin, Send, Mail, Clock, Sparkles, Brain, Target, TrendingUp, Users, Award } from "lucide-react";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -92,24 +92,24 @@ export default function Contact() {
         <div className="text-center mb-12">
           <div className="flex flex-wrap justify-center items-center gap-8 mb-8">
             <div className="flex items-center gap-2 text-text-secondary">
-              <Shield className="h-5 w-5 text-primary-orange" />
-              <span className="text-sm font-medium">HIPAA Compliant</span>
+              <Brain className="h-5 w-5 text-primary-orange" />
+              <span className="text-sm font-medium">Smart Analytics</span>
             </div>
             <div className="flex items-center gap-2 text-text-secondary">
-              <Zap className="h-5 w-5 text-primary-blue" />
-              <span className="text-sm font-medium">99.9% Uptime</span>
+              <Target className="h-5 w-5 text-primary-blue" />
+              <span className="text-sm font-medium">Accurate Diagnosis</span>
             </div>
             <div className="flex items-center gap-2 text-text-secondary">
-              <Heart className="h-5 w-5 text-primary-teal" />
-              <span className="text-sm font-medium">24/7 Support</span>
+              <TrendingUp className="h-5 w-5 text-primary-teal" />
+              <span className="text-sm font-medium">Efficiency Boost</span>
             </div>
             <div className="flex items-center gap-2 text-text-secondary">
-              <Brain className="h-5 w-5 text-primary-purple" />
-              <span className="text-sm font-medium">AI-Powered</span>
+              <Users className="h-5 w-5 text-primary-purple" />
+              <span className="text-sm font-medium">Team Collaboration</span>
             </div>
             <div className="flex items-center gap-2 text-text-secondary">
-              <Target className="h-5 w-5 text-primary-green" />
-              <span className="text-sm font-medium">Precision Focused</span>
+              <Award className="h-5 w-5 text-primary-green" />
+              <span className="text-sm font-medium">Quality Assurance</span>
             </div>
           </div>
         </div>
