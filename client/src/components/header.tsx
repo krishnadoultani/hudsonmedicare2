@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowRight, Sparkles } from "lucide-react";
+import { Menu, X, Sparkles, Shield, Heart, Zap } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,43 +66,21 @@ export default function Header() {
             Hudson Healthcare Solutions
           </button>
 
-          {/* Desktop Navigation - Know More Card */}
-          <div className="hidden lg:flex items-center">
-            <div className="bg-glass-bg backdrop-blur-glass border border-primary-orange/20 rounded-2xl p-3 shadow-premium">
-              <div className="flex items-center gap-3">
-                <span className="text-text-primary font-medium text-sm">Know More</span>
-                <ArrowRight className="h-3 w-3 text-primary-orange" />
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="h-8 w-8 text-text-primary hover:bg-primary-orange/10 border border-primary-orange/20 rounded-lg transition-spring"
-                >
-                  {isMobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
-                </Button>
+          {/* Desktop Navigation - Trust Indicators */}
+          <div className="hidden lg:flex items-center space-x-8">
+            <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-2 text-text-secondary">
+                <Shield className="h-4 w-4 text-primary-orange" />
+                <span className="text-sm font-medium">HIPAA Compliant</span>
               </div>
-              
-              {isMobileMenuOpen && (
-                <div className="absolute top-full right-0 mt-2 bg-glass-bg backdrop-blur-glass border border-primary-orange/20 rounded-xl p-4 shadow-2xl min-w-[200px] z-50">
-                  <div className="space-y-2">
-                    {[
-                      { label: 'Home', id: 'home' },
-                      { label: 'About', id: 'about' },
-                      { label: 'Solutions', id: 'solutions' },
-                      { label: 'Why', id: 'why' },
-                      { label: 'Contact', id: 'contact' },
-                    ].map((item) => (
-                      <button
-                        key={item.id}
-                        onClick={() => scrollToSection(item.id)}
-                        className="block w-full text-left px-3 py-2 text-text-secondary hover:text-primary-orange hover:bg-primary-orange/10 rounded-lg transition-spring text-sm"
-                      >
-                        {item.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
+              <div className="flex items-center space-x-2 text-text-secondary">
+                <Heart className="h-4 w-4 text-primary-teal" />
+                <span className="text-sm font-medium">24/7 Support</span>
+              </div>
+              <div className="flex items-center space-x-2 text-text-secondary">
+                <Zap className="h-4 w-4 text-primary-blue" />
+                <span className="text-sm font-medium">99.9% Uptime</span>
+              </div>
             </div>
           </div>
 

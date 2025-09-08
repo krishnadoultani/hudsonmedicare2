@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, MapPin, Send, Mail, Clock, Sparkles } from "lucide-react";
+import { Phone, MapPin, Send, Mail, Clock, Sparkles, Shield, Zap, Heart, Brain, Target } from "lucide-react";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -88,6 +88,43 @@ export default function Contact() {
       <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-accent rounded-full opacity-10 blur-3xl" />
       
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Trust Indicators */}
+        <div className="text-center mb-12">
+          <div className="flex flex-wrap justify-center items-center gap-8 mb-8">
+            <div className="flex items-center gap-2 text-text-secondary">
+              <Shield className="h-5 w-5 text-primary-orange" />
+              <span className="text-sm font-medium">HIPAA Compliant</span>
+            </div>
+            <div className="flex items-center gap-2 text-text-secondary">
+              <Zap className="h-5 w-5 text-primary-blue" />
+              <span className="text-sm font-medium">99.9% Uptime</span>
+            </div>
+            <div className="flex items-center gap-2 text-text-secondary">
+              <Heart className="h-5 w-5 text-primary-teal" />
+              <span className="text-sm font-medium">24/7 Support</span>
+            </div>
+            <div className="flex items-center gap-2 text-text-secondary">
+              <Brain className="h-5 w-5 text-primary-purple" />
+              <span className="text-sm font-medium">AI-Powered</span>
+            </div>
+            <div className="flex items-center gap-2 text-text-secondary">
+              <Target className="h-5 w-5 text-primary-green" />
+              <span className="text-sm font-medium">Precision Focused</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Call to Action Button */}
+        <div className="text-center mb-16">
+          <Button
+            className="gradient-primary hover:shadow-glow text-white font-semibold px-8 py-4 rounded-xl text-lg transition-spring hover-lift premium-glow group mb-8"
+            data-testid="contact-cta-button"
+          >
+            <Sparkles className="mr-2 h-5 w-5" />
+            Get in Touch
+          </Button>
+        </div>
+
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-glass-bg backdrop-blur-glass border border-primary-orange/20 rounded-full px-4 py-2 mb-6">
             <Sparkles className="h-4 w-4 text-primary-orange" />

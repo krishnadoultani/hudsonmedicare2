@@ -65,22 +65,22 @@ export default function Hero() {
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8 text-center">
         {/* Navigation Menu Card */}
         <div className="absolute top-8 right-8 z-50">
-          <div className="bg-glass-bg backdrop-blur-glass border border-primary-orange/20 rounded-2xl p-3 shadow-premium">
+          <div className="bg-white/95 backdrop-blur-sm border border-primary-orange/30 rounded-2xl p-4 shadow-xl">
             <div className="flex items-center gap-3">
-              <span className="text-text-primary font-medium text-sm">Know More</span>
+              <span className="text-slate-700 font-medium text-sm">Know More</span>
               <ArrowRight className="h-3 w-3 text-primary-orange" />
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="h-8 w-8 text-text-primary hover:bg-primary-orange/10 border border-primary-orange/20 rounded-lg transition-spring"
+                className="h-8 w-8 text-slate-600 hover:bg-primary-orange/10 border border-slate-200 rounded-lg transition-spring"
               >
                 {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
               </Button>
             </div>
             
             {isMenuOpen && (
-              <div className="absolute top-full right-0 mt-2 bg-glass-bg backdrop-blur-glass border border-primary-orange/20 rounded-xl p-4 shadow-2xl min-w-[200px] z-50">
+              <div className="absolute top-full right-0 mt-2 bg-white/98 backdrop-blur-sm border border-slate-200/60 rounded-xl p-4 shadow-2xl min-w-[200px] z-50">
                 <div className="space-y-2">
                   {[
                     { label: 'Home', id: 'home' },
@@ -92,7 +92,7 @@ export default function Hero() {
                     <button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className="block w-full text-left px-3 py-2 text-text-secondary hover:text-primary-orange hover:bg-primary-orange/10 rounded-lg transition-spring text-sm"
+                      className="block w-full text-left px-3 py-2 text-slate-700 hover:text-primary-orange hover:bg-slate-100 rounded-lg transition-spring text-sm"
                     >
                       {item.label}
                     </button>
@@ -185,6 +185,14 @@ export default function Hero() {
           <div className="flex items-center gap-2">
             <Heart className="h-5 w-5 text-primary-teal" />
             <span className="text-sm font-medium text-text-secondary">24/7 Support</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Sparkles className="h-5 w-5 text-primary-purple" />
+            <span className="text-sm font-medium text-text-secondary">Innovation Focused</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Users className="h-5 w-5 text-primary-green" />
+            <span className="text-sm font-medium text-text-secondary">Patient-Centric</span>
           </div>
         </div>
       </div>
