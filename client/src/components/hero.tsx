@@ -175,24 +175,24 @@ export default function Hero() {
         {/* Trust Indicators */}
         <div className="mt-8 flex flex-wrap justify-center items-center gap-8 opacity-60 animate-fade-in" style={{ animationDelay: '1s' }}>
           <div className="flex items-center gap-2">
-            <Shield className="h-5 w-5 text-primary-orange" />
-            <span className="text-sm font-medium text-text-secondary">HIPAA Compliant</span>
+            <Sparkles className="h-5 w-5 text-primary-orange" />
+            <span className="text-sm font-medium text-text-secondary">AI-Powered Analytics</span>
           </div>
           <div className="flex items-center gap-2">
             <Zap className="h-5 w-5 text-primary-blue" />
-            <span className="text-sm font-medium text-text-secondary">99.9% Uptime</span>
+            <span className="text-sm font-medium text-text-secondary">Real-Time Integration</span>
           </div>
           <div className="flex items-center gap-2">
             <Heart className="h-5 w-5 text-primary-teal" />
-            <span className="text-sm font-medium text-text-secondary">24/7 Support</span>
+            <span className="text-sm font-medium text-text-secondary">Patient-Centric Design</span>
           </div>
           <div className="flex items-center gap-2">
-            <Sparkles className="h-5 w-5 text-primary-purple" />
-            <span className="text-sm font-medium text-text-secondary">Innovation First</span>
+            <Shield className="h-5 w-5 text-primary-purple" />
+            <span className="text-sm font-medium text-text-secondary">Enterprise Security</span>
           </div>
           <div className="flex items-center gap-2">
             <Users className="h-5 w-5 text-primary-green" />
-            <span className="text-sm font-medium text-text-secondary">Provider-Focused</span>
+            <span className="text-sm font-medium text-text-secondary">Clinical Workflow Optimization</span>
           </div>
         </div>
       </div>

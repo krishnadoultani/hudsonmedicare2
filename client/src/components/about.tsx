@@ -73,32 +73,32 @@ export default function About() {
               <div className="p-3 bg-gradient-primary rounded-full w-fit mx-auto mb-4">
                 <Users className="h-6 w-6 text-white" />
               </div>
-              <div className="text-3xl font-bold text-gradient-primary mb-2">500+</div>
-              <div className="text-text-secondary">Healthcare Partners</div>
+              <div className="text-3xl font-bold text-gradient-primary mb-2">HIPAA</div>
+              <div className="text-text-secondary">Compliant</div>
             </div>
             
             <div className="glass-card p-6 rounded-xl text-center hover-lift">
               <div className="p-3 bg-gradient-accent rounded-full w-fit mx-auto mb-4">
                 <Award className="h-6 w-6 text-white" />
               </div>
-              <div className="text-3xl font-bold text-gradient-accent mb-2">15+</div>
-              <div className="text-text-secondary">Years Experience</div>
+              <div className="text-3xl font-bold text-gradient-accent mb-2">99.9%</div>
+              <div className="text-text-secondary">Uptime</div>
             </div>
             
             <div className="glass-card p-6 rounded-xl text-center hover-lift">
               <div className="p-3 bg-primary-orange rounded-full w-fit mx-auto mb-4">
                 <Target className="h-6 w-6 text-white" />
               </div>
-              <div className="text-3xl font-bold text-primary-orange mb-2">99.9%</div>
-              <div className="text-text-secondary">Uptime Guarantee</div>
+              <div className="text-3xl font-bold text-primary-orange mb-2">24/7</div>
+              <div className="text-text-secondary">Support</div>
             </div>
             
             <div className="glass-card p-6 rounded-xl text-center hover-lift">
               <div className="p-3 bg-primary-teal rounded-full w-fit mx-auto mb-4">
                 <Lightbulb className="h-6 w-6 text-white" />
               </div>
-              <div className="text-3xl font-bold text-primary-teal mb-2">24/7</div>
-              <div className="text-text-secondary">Support Available</div>
+              <div className="text-3xl font-bold text-primary-teal mb-2">500+</div>
+              <div className="text-text-secondary">Partners</div>
             </div>
           </div>
         </div>

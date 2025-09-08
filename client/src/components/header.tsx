@@ -70,16 +70,16 @@ export default function Header() {
           <div className="hidden lg:flex items-center space-x-8">
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2 text-text-secondary">
-                <Shield className="h-4 w-4 text-primary-orange" />
-                <span className="text-sm font-medium">HIPAA Compliant</span>
+                <Sparkles className="h-4 w-4 text-primary-orange" />
+                <span className="text-sm font-medium">Digital Health Innovation</span>
               </div>
               <div className="flex items-center space-x-2 text-text-secondary">
                 <Heart className="h-4 w-4 text-primary-teal" />
-                <span className="text-sm font-medium">24/7 Support</span>
+                <span className="text-sm font-medium">Care Coordination</span>
               </div>
               <div className="flex items-center space-x-2 text-text-secondary">
                 <Zap className="h-4 w-4 text-primary-blue" />
-                <span className="text-sm font-medium">99.9% Uptime</span>
+                <span className="text-sm font-medium">Interoperability</span>
               </div>
             </div>
           </div>
