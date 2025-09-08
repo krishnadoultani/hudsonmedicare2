@@ -119,7 +119,16 @@ export default function WhyHudson() {
                   className="glass-card p-6 rounded-xl text-center hover-lift scroll-reveal"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className={`p-3 bg-${indicator.color} rounded-full w-fit mx-auto mb-4`}>
+                  <div 
+                    className="p-3 rounded-full w-fit mx-auto mb-4"
+                    style={{ 
+                      backgroundColor: indicator.color === 'primary-orange' ? '#f97316' :
+                                     indicator.color === 'primary-blue' ? '#3b82f6' :
+                                     indicator.color === 'primary-teal' ? '#14b8a6' :
+                                     indicator.color === 'primary-purple' ? '#8b5cf6' :
+                                     indicator.color === 'primary-green' ? '#10b981' : '#f97316'
+                    }}
+                  >
                     <IconComponent className="h-6 w-6 text-white" />
                   </div>
                   <div className="text-sm font-medium text-text-secondary">

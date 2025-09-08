@@ -110,31 +110,31 @@ export default function Contact() {
           {/* Trust Indicators */}
           <div className="flex flex-wrap justify-center items-center gap-6 mb-8 opacity-80 scroll-reveal">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary-orange rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#f97316' }}>
                 <Sparkles className="h-4 w-4 text-white" />
               </div>
               <span className="text-sm font-medium text-text-secondary">Innovation First</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary-blue rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#3b82f6' }}>
                 <Rocket className="h-4 w-4 text-white" />
               </div>
               <span className="text-sm font-medium text-text-secondary">Rapid Deployment</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary-teal rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#14b8a6' }}>
                 <Lock className="h-4 w-4 text-white" />
               </div>
               <span className="text-sm font-medium text-text-secondary">Secure by Design</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary-purple rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#8b5cf6' }}>
                 <Cloud className="h-4 w-4 text-white" />
               </div>
               <span className="text-sm font-medium text-text-secondary">Cloud-Native</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary-green rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#10b981' }}>
                 <Users className="h-4 w-4 text-white" />
               </div>
               <span className="text-sm font-medium text-text-secondary">Provider-Focused</span>
@@ -152,7 +152,7 @@ export default function Contact() {
             </CardHeader>
             <CardContent className="space-y-8">
               <div className="flex items-start space-x-4 p-4 bg-primary-orange/10 rounded-xl hover:bg-primary-orange/20 transition-spring">
-                <div className="p-2 bg-primary-orange rounded-lg">
+                <div className="p-2 rounded-lg" style={{ backgroundColor: '#f97316' }}>
                   <Phone className="h-5 w-5 text-white" />
                 </div>
                 <div>
@@ -168,7 +168,7 @@ export default function Contact() {
               </div>
               
               <div className="flex items-start space-x-4 p-4 bg-primary-blue/10 rounded-xl hover:bg-primary-blue/20 transition-spring">
-                <div className="p-2 bg-primary-blue rounded-lg">
+                <div className="p-2 rounded-lg" style={{ backgroundColor: '#3b82f6' }}>
                   <MapPin className="h-5 w-5 text-white" />
                 </div>
                 <div>
@@ -187,7 +187,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start space-x-4 p-4 bg-primary-teal/10 rounded-xl hover:bg-primary-teal/20 transition-spring">
-                <div className="p-2 bg-primary-teal rounded-lg">
+                <div className="p-2 rounded-lg" style={{ backgroundColor: '#14b8a6' }}>
                   <Mail className="h-5 w-5 text-white" />
                 </div>
                 <div>
@@ -202,7 +202,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start space-x-4 p-4 bg-primary-purple/10 rounded-xl hover:bg-primary-purple/20 transition-spring">
-                <div className="p-2 bg-primary-purple rounded-lg">
+                <div className="p-2 rounded-lg" style={{ backgroundColor: '#8b5cf6' }}>
                   <Clock className="h-5 w-5 text-white" />
                 </div>
                 <div>
